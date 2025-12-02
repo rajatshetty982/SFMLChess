@@ -3,63 +3,61 @@
 //
 namespace chess {
 template <typename T>
-class Vector2
+class Vector
 {
 public:
 
-    Vector2();
+	Vector();
 
-    Vector2(T X, T Y);
+	Vector(T X, T Y);
 
-    template <typename U>
-    explicit Vector2(const Vector2<U>& vector);
+	template <typename U>
+	explicit Vector(const Vector<U>& vector);
 
-    T x; //!< X coordinate of the vector
-    T y; //!< Y coordinate of the vector
+	T x, y;
 };
 
 template <typename T>
-Vector2<T> operator -(const Vector2<T>& right);
+Vector<T> operator -(const Vector<T>& right);
 
 template <typename T>
-Vector2<T>& operator +=(Vector2<T>& left, const Vector2<T>& right);
+Vector<T>& operator +=(Vector<T>& left, const Vector<T>& right);
 
 template <typename T>
-Vector2<T>& operator -=(Vector2<T>& left, const Vector2<T>& right);
+Vector<T>& operator -=(Vector<T>& left, const Vector<T>& right);
 
 template <typename T>
-Vector2<T> operator +(const Vector2<T>& left, const Vector2<T>& right);
+Vector<T> operator +(const Vector<T>& left, const Vector<T>& right);
 
 template <typename T>
-Vector2<T> operator -(const Vector2<T>& left, const Vector2<T>& right);
+Vector<T> operator -(const Vector<T>& left, const Vector<T>& right);
 
 template <typename T>
-Vector2<T> operator *(const Vector2<T>& left, T right);
+Vector<T> operator *(const Vector<T>& left, T right);
 
 template <typename T>
-Vector2<T> operator *(T left, const Vector2<T>& right);
+Vector<T> operator *(T left, const Vector<T>& right);
 
 template <typename T>
-Vector2<T>& operator *=(Vector2<T>& left, T right);
+Vector<T>& operator *=(Vector<T>& left, T right);
 
 template <typename T>
-Vector2<T> operator /(const Vector2<T>& left, T right);
+Vector<T> operator /(const Vector<T>& left, T right);
 
 template <typename T>
-Vector2<T>& operator /=(Vector2<T>& left, T right);
+Vector<T>& operator /=(Vector<T>& left, T right);
 
 template <typename T>
-bool operator ==(const Vector2<T>& left, const Vector2<T>& right);
+bool operator ==(const Vector<T>& left, const Vector<T>& right);
 
 template <typename T>
-bool operator !=(const Vector2<T>& left, const Vector2<T>& right);
+bool operator !=(const Vector<T>& left, const Vector<T>& right);
 
 #include "Chess/Utils.inl"
 
 // Define the most common types
-typedef Vector2<int>          Vector2i;
-typedef Vector2<unsigned int> Vector2u;
-typedef Vector2<float>        Vector2f;
-
+typedef Vector<unsigned int> VectorU;
+typedef Vector<int>          VectorI;
+typedef Vector<float>        VectorF;
 }
 

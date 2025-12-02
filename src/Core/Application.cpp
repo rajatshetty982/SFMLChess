@@ -42,6 +42,7 @@ void Application::update(sf::Time dt)
 {
 	Piece piece( PieceColour::Black, PieceType::King);
 	print_piece(piece);
+	
 }
 void Application::render(){
 	m_Window.clear();

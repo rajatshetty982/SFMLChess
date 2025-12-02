@@ -16,6 +16,8 @@ struct Piece
 	PieceType m_Type = PieceType::None;
 	PieceColour m_Colour = PieceColour::White;
 
+	static uint64_t m_FrameCount;
+
 	constexpr	Piece() noexcept = default;
 	constexpr Piece (PieceColour c, PieceType t) noexcept
 	: m_Colour(c), m_Type(t) {}

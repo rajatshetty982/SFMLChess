@@ -2,9 +2,8 @@
 
 if you have cmake, make, clang, just do this
 
-`bash
-    mkdir build
-    cmake ..
-    make
 `
+    mkdir build && cd build/ && cmake .. && make
+`
+
 Then just run the ChessSFML binary in the build/

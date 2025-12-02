@@ -27,7 +27,7 @@ private:
 	boardColours::Colour defaultDark = boardColours::Presets::MyGreen;
 	boardColours::Colour defaultLight = boardColours::Presets::MyWhite;
 	unsigned int m_SquareSize; // TODO: set a default for this
-	chess::Vector2f m_BoardOffset;
+	chess::VectorF m_BoardOffset;
 };
 
 /*
