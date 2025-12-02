@@ -1,10 +1,13 @@
 #pragma once
 
 #include "Core/ResourceHolder.hpp"
-#include "Engine/ResourceID.hpp"
+#include "Core/ResourceID.hpp"
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/System/Time.hpp>
 #include <SFML/Window/Window.hpp>
+#include <cstdint>
 
 class Application
 {
@@ -18,7 +21,10 @@ private:
 	void render();
 
 private:
+	sf::Time m_TimePerFrame; // int64 is what sfml use for time, I will make my own typedefs later to put all types coupled with sfml somewhere later
 	sf::RenderWindow m_Window;
+	// StateStack m_StateStack;
+
 	PieceTextureHolder m_PieceTextures;
 	FontHolder m_Fonts;
 	AudioHolder m_Audio;

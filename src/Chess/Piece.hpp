@@ -28,12 +28,12 @@ struct Piece
 	}
 
 };
-
-constexpr Piece make_piece(PieceColour c, PieceType t) noexcept {
-	return Piece(c, t);
-}
+//
+// constexpr Piece make_piece(PieceColour c, PieceType t) noexcept {
+// 	return Piece(c, t);
+// }
 
 constexpr PieceType  type_of(Piece p) noexcept   { return p.m_Type; }
 constexpr PieceColour color_of(Piece p) noexcept { return p.m_Colour; }
 
-void print_pieIe(Piece p);
+void print_piece(Piece p);
