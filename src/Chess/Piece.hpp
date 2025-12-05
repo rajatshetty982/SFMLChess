@@ -16,7 +16,6 @@ struct Piece
 	PieceType m_Type = PieceType::None;
 	PieceColour m_Colour = PieceColour::White;
 
-	static uint64_t m_FrameCount;
 
 	constexpr	Piece() noexcept = default;
 	constexpr Piece (PieceColour c, PieceType t) noexcept
@@ -38,4 +37,4 @@ struct Piece
 constexpr PieceType  type_of(Piece p) noexcept   { return p.m_Type; }
 constexpr PieceColour color_of(Piece p) noexcept { return p.m_Colour; }
 
-void print_piece(Piece p);
+void print_piece(Piece p, uint64_t count);

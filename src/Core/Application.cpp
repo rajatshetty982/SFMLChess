@@ -9,7 +9,7 @@
 
 Application::Application()
 	: m_Window(sf::VideoMode(800,800), "SFML_Chess")
-	,  m_TimePerFrame(sf::microseconds(16)) {}
+	, m_TimePerFrame(sf::milliseconds(16)) {}
 
 void Application::run()
 {
@@ -22,8 +22,10 @@ void Application::run()
 		timeSinceLastUpdate += dt;
 		while (timeSinceLastUpdate > m_TimePerFrame)
 		{
+			timeSinceLastUpdate -= m_TimePerFrame;
+
 			processInput();
-			update(dt);
+			update(m_TimePerFrame); // NOTE: dt!
 		}
 		render();
 	}
@@ -41,8 +43,9 @@ void Application::processInput()
 void Application::update(sf::Time dt)
 {
 	Piece piece( PieceColour::Black, PieceType::King);
-	print_piece(piece);
-	
+	static uint64_t count = 0;
+	print_piece(piece, count);
+	count++;
 }
 void Application::render(){
 	m_Window.clear();

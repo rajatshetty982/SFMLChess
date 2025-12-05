@@ -1,13 +1,25 @@
 #pragma once
 
-#include "Core/ResourceHolder.hpp"
+ #include "Core/ResourceHolder.hpp"
 #include "Core/ResourceID.hpp"
+#include "Core/State.hpp"
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Time.hpp>
 #include <SFML/Window/Window.hpp>
-#include <cstdint>
+// #include <cstdint>
+#include <memory>
+
+namespace Core {
+enum class StateID
+{
+	INITIALISATION,
+	MENU,
+	PLAYING,
+	QUIT,
+};
+}
 
 class Application
 {
@@ -29,5 +41,6 @@ private:
 	FontHolder m_Fonts;
 	AudioHolder m_Audio;
 
-	// StateStack m_StateStack;
+	Core::StateID m_CurrentState = Core::StateID::INITIALISATION;
+	Core::StateStack m_StateStack;
 };

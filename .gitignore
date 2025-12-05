@@ -1,4 +1,7 @@
-build/
 .vscode/
-design/
+/design/
 .cache/
+*.o 
+*.a
+*.so
+/build/
